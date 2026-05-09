@@ -91,6 +91,20 @@ body::before{content:'';position:fixed;inset:0;z-index:0;background:repeating-li
     max-height: 80vh;
 }
 .on-board { margin: 5px; transition: transform 0.3s ease; }
+
+/* Sistema de Conexion Snake Lyra_OS */
+#board-container {
+}
+.on-board {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.on-board:hover {
+    transform: translateY(-5px) scale(1.05);
+    z-index: 10;
+}
+/* Estilizacion de la Ficha en Mesa */
+.on-board .tile-half {
+}
 </style>
 </head>
 <body>
