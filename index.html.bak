@@ -408,20 +408,6 @@ function showView(v){
 function toast(m){const e=document.getElementById('toast');e.textContent=m;e.classList.add('show');clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('show'),2500);}
 function showLoad(m){document.getElementById('loading-text').textContent=m;document.getElementById('loading').classList.add('show');}
 function hideLoad(){document.getElementById('loading').classList.remove('show');}
-document.addEventListener('DOMContentLoaded',()=>{
-  document.querySelector('[onclick="startVsAI()"]').onclick=()=>window.startVsAI();
-  document.querySelector('[onclick="showCreateRoom()"]').onclick=()=>window.showCreateRoom();
-  document.querySelector('[onclick="showJoinRoom()"]').onclick=()=>window.showJoinRoom();
-  document.querySelector('[onclick="hideCards()"]') && document.querySelectorAll('[onclick="hideCards()"]').forEach(b=>b.onclick=()=>window.hideCards());
-  document.querySelector('[onclick="createRoom()"]').onclick=()=>window.createRoom();
-  document.querySelector('[onclick="joinRoom()"]').onclick=()=>window.joinRoom();
-  document.querySelector('[onclick="hostStartGame()"]').onclick=()=>window.hostStartGame();
-  document.querySelector('[onclick="leaveRoom()"]').onclick=()=>window.leaveRoom();
-  document.querySelector('[onclick="passTurn()"]').onclick=()=>window.passTurn();
-  document.querySelector('[onclick="leaveGame()"]').onclick=()=>window.leaveGame();
-  document.querySelector('[onclick="playAgain()"]').onclick=()=>window.playAgain();
-  document.querySelector('[onclick="goMenu()"]').onclick=()=>window.goMenu();
-});
 </script>
 </body>
 </html>
