@@ -44,8 +44,8 @@ body::before{content:'';position:fixed;inset:0;z-index:0;background:repeating-li
 .score-badge span{display:block;font-size:16px;font-weight:700;color:var(--amber2)}
 #table-area{flex:1;overflow:hidden;position:relative;background:radial-gradient(ellipse at 50% 30%,rgba(255,149,0,0.12) 0%,transparent 60%),linear-gradient(135deg,var(--felt2),var(--felt));}
 #table-border{position:absolute;inset:0;border:12px solid var(--wood2);border-radius:24px;box-shadow:inset 0 0 40px rgba(0,0,0,0.4);pointer-events:none;z-index:10;}
-#board-canvas{position:absolute;inset:0;overflow:hidden;}
-#board-container{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:2px;}
+#board-canvas{position:absolute;inset:0;overflow-x:auto;overflow-y:hidden;}
+#board-container{position:absolute;top:50%;left:16px;transform:translateY(-50%);display:flex;align-items:center;gap:2px;min-width:max-content;}
 .domino-tile{position:relative;background:var(--tile-white);border-radius:5px;border:2px solid #bbb;box-shadow:2px 3px 8px rgba(0,0,0,0.6),inset 0 1px 0 rgba(255,255,255,0.8);display:flex;flex-direction:column;align-items:center;cursor:pointer;transition:transform 0.15s,box-shadow 0.15s;flex-shrink:0;}
 .domino-tile.horizontal{width:70px;height:35px;flex-direction:row;}
 .domino-tile.vertical{width:35px;height:70px;flex-direction:column;}
@@ -141,7 +141,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;background:repeating-li
   <div id="table-area">
     <div id="table-border"></div>
     <div id="board-canvas"><div id="board-container"></div></div>
-    <div style="position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:5">
+    <div style="position:absolute;bottom:8px;left:8px;display:flex;gap:8px;z-index:15">
       <div class="end-marker" id="left-end" onclick="selectEnd('left')">L</div>
       <div class="end-marker" id="right-end" onclick="selectEnd('right')">R</div>
     </div>
@@ -299,7 +299,7 @@ function endGame(iWon){
 }
 window.startVsAI=function(){
   const tiles=shuffle(genTiles());
-  G={...G,mode:'ai',myHand:tiles.slice(0,7),aiHand:tiles.slice(7,14),board:[],boardLeft:null,boardRight:null,myTurn:true,passCount:0,selectedTile:null,oppName:'IA'};
+  G.mode='ai';G.myHand=tiles.slice(0,7);G.aiHand=tiles.slice(7,14);G.board=[];G.boardLeft=null;G.boardRight=null;G.myTurn=true;G.passCount=0;G.selectedTile=null;G.oppName='IA';var _unused='unused',board:[],boardLeft:null,boardRight:null,myTurn:true,passCount:0,selectedTile:null,oppName:'IA'};
   document.getElementById('opp-name-label').textContent='IA';
   showView('game');renderAll();toast('¡Buena suerte! Tú comienzas');
 };
