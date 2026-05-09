@@ -274,7 +274,7 @@ function aiTurn(){
   placeTile(chosen,end,!G.board.length);
   hand.splice(idx,1);G.passCount=0;
   if(!hand.length){endGame(false);return;}
-  G.myTurn=true;renderOpp(hand.length);renderBoard();
+  G.myTurn=true;renderAll();
   if(!hasPlay()){
     toast('No puedes jugar, pasa automático');G.passCount++;
     if(G.passCount>=2){endGame(null);return;}
