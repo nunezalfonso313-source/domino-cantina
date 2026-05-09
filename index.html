@@ -45,7 +45,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;background:repeating-li
 #table-area{flex:1;overflow:hidden;position:relative;background:radial-gradient(ellipse at 50% 30%,rgba(255,149,0,0.12) 0%,transparent 60%),linear-gradient(135deg,var(--felt2),var(--felt));}
 #table-border{position:absolute;inset:0;border:12px solid var(--wood2);border-radius:24px;box-shadow:inset 0 0 40px rgba(0,0,0,0.4);pointer-events:none;z-index:10;}
 #board-canvas{position:absolute;inset:0;overflow:hidden;}
-
+#board-container{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:2px;}
 .domino-tile{position:relative;background:var(--tile-white);border-radius:5px;border:2px solid #bbb;box-shadow:2px 3px 8px rgba(0,0,0,0.6),inset 0 1px 0 rgba(255,255,255,0.8);display:flex;flex-direction:column;align-items:center;cursor:pointer;transition:transform 0.15s,box-shadow 0.15s;flex-shrink:0;}
 .domino-tile.horizontal{width:70px;height:35px;flex-direction:row;}
 .domino-tile.vertical{width:35px;height:70px;flex-direction:column;}
@@ -85,30 +85,6 @@ body::before{content:'';position:fixed;inset:0;z-index:0;background:repeating-li
 @keyframes spin{to{transform:rotate(360deg)}}
 #loading-text{font-family:'Special Elite',cursive;color:var(--cream);font-size:16px;letter-spacing:2px}
 .end-marker{width:24px;height:24px;border-radius:50%;background:rgba(212,137,10,0.3);border:2px solid var(--amber);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--amber);font-weight:700;cursor:pointer;flex-shrink:0;}
-
-/* Optimizacion de Mesa Lyra_OS */
-
-.on-board { margin: 5px; transition: transform 0.3s ease; }
-
-/* Sistema de Conexion Snake Lyra_OS */
-
-.on-board {
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-.on-board:hover {
-    transform: translateY(-5px) scale(1.05);
-    z-index: 10;
-}
-/* Estilizacion de la Ficha en Mesa */
-.on-board .tile-half {
-}
-
-/* --- OPTIMIZACION MESA LYRA_OS --- */
-#board-container {
-}
-.on-board {
-    transform: scale(0.9);
-}
 </style>
 </head>
 <body>
