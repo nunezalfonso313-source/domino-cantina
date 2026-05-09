@@ -248,7 +248,7 @@ function playTile(){
     const tgt=end==='left'?G.boardLeft:G.boardRight;
     if(tile[0]!==tgt&&tile[1]!==tgt){toast('Esa ficha no cabe ahí');return;}
   }
-  placeTile(tile,end,!G.board.length||G.board.length===0);
+  placeTile(tile,end,G.board.length===0);
   G.myHand.splice(i,1);G.selectedTile=null;G.selectedEnd=null;G.passCount=0;
   if(!G.myHand.length){endGame(true);return;}
   G.myTurn=false;renderAll();
