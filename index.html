@@ -85,6 +85,12 @@ body::before{content:'';position:fixed;inset:0;z-index:0;background:repeating-li
 @keyframes spin{to{transform:rotate(360deg)}}
 #loading-text{font-family:'Special Elite',cursive;color:var(--cream);font-size:16px;letter-spacing:2px}
 .end-marker{width:24px;height:24px;border-radius:50%;background:rgba(212,137,10,0.3);border:2px solid var(--amber);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--amber);font-weight:700;cursor:pointer;flex-shrink:0;}
+
+/* Optimizacion de Mesa Lyra_OS */
+#board-container {
+    max-height: 80vh;
+}
+.on-board { margin: 5px; transition: transform 0.3s ease; }
 </style>
 </head>
 <body>
